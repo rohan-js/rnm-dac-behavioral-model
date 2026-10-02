@@ -9,7 +9,8 @@ version changes.
 | UDR — user-defined resolution function | ✅ verified | (same mechanism) |
 | UDT — user-defined struct nettype | ✅ verified | (same mechanism) |
 | Real-valued continuous checking + SVA bound assertions on reals | ✅ verified | expected — confirm during first EPG run |
-| Verilog-AMS `wreal` | ❌ requires Questa ADMS (AMS product; not installed) | ❌ **not executable on EPG** — Xcelium 25.03-s001 (digital) rejects `wreal` (SVNOTY); `-ams` mode fatals with `*F,SPNFDFE: XCELIUM AMS Flex cannot find a Spectre installation` — EPG ships no Spectre. Re-routed: see below |
+| Verilog-AMS `wreal` | ❌ requires Questa ADMS (AMS product; not installed) | ❌ not executable on EPG — Xcelium 25.03-s001 (digital) rejects `wreal` (SVNOTY); `-ams` fatals `*F,SPNFDFE` (no Spectre); **Aldec Riviera Pro 2025.04 also rejects `wreal`** (VCP2000 at the `wreal` port declaration — no AMS subset in EPG's build) |
+| **wreal resolution** | — | **Dialect twin kept as documented, unexecuted port** (`epg/dac_wreal.sv`); execute on an AMS-licensed install (institute Cadence Xcelium/Spectre or Questa ADMS) when available. Executed RNM claims are carried by the UDN dialect only |
 | ngspice (SPICE reference side) | ✅ ngspice-47 (console, `D:\tools\ngspice\Spice64\bin\ngspice_con.exe`) — RC smoke verified, `v(out)` tracks the DC sweep exactly | — |
 
 ## Questa 2024.1 results (local)
