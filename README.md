@@ -14,8 +14,19 @@ reference, the model is fit to it, and SystemVerilog assertions bound the
 model-vs-SPICE error. Model accuracy, INL/DNL, and settling are reported in
 `results/` and `docs/model-accuracy-report.md`.
 
-**Status: Phase 0 — tool ground truth.** See `docs/tool-support.md` for the
-simulator support matrix and `docs/plan.md` for the phase plan.
+**Status: Phase 1 complete.** Tool ground truth in `docs/tool-support.md`
+(Questa 2024.1 runs the UDN flow locally; `wreal` is a documented, unexecuted
+dialect port — no accessible AMS-licensed simulator), dialect mapping in
+`docs/rnm-dialect-notes.md`.
+
+Phase 1 evidence (all 0 errors / 0 warnings on Questa 2024.1):
+
+```
+DAC6_IDEAL_PASS codes=64 max_err=0.000e+00 half_lsb=2.578e-02 coverage=100.0%
+UDR_MULTI_PASS  vbus=1.650000 (res_avg of 1.100000, 2.200000)
+UDN_SMOKE_PASS  vout=2.200000 exp_v=2.200000
+UDT_SMOKE_PASS  value=1.250000 valid=1
+```
 
 ## Quick start (local, QuestaSim 2024.1)
 
