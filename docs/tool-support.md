@@ -9,7 +9,7 @@ version changes.
 | UDR — user-defined resolution function | ✅ verified | (same mechanism) |
 | UDT — user-defined struct nettype | ✅ verified | (same mechanism) |
 | Real-valued continuous checking + SVA bound assertions on reals | ✅ verified | expected — confirm during first EPG run |
-| Verilog-AMS `wreal` | ❌ requires Questa ADMS (AMS product; not installed) | pending — run `epg/wreal_smoke.sv` per `epg/README.md` |
+| Verilog-AMS `wreal` | ❌ requires Questa ADMS (AMS product; not installed) | ❌ **not executable on EPG** — Xcelium 25.03-s001 (digital) rejects `wreal` (SVNOTY); `-ams` mode fatals with `*F,SPNFDFE: XCELIUM AMS Flex cannot find a Spectre installation` — EPG ships no Spectre. Re-routed: see below |
 | ngspice (SPICE reference side) | ✅ ngspice-47 (console, `D:\tools\ngspice\Spice64\bin\ngspice_con.exe`) — RC smoke verified, `v(out)` tracks the DC sweep exactly | — |
 
 ## Questa 2024.1 results (local)
