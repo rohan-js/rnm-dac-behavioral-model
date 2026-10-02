@@ -1,0 +1,20 @@
+# EDA / simulator artifacts
+work/
+*.wlf
+transcript
+qrun.log
+qrun.db
+*.obj
+*.pdb
+*.ucdb
+vsim.wlf
+
+# ngspice scratch
+spice/raw/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local run scratch
+results/tmp/
