@@ -33,14 +33,14 @@ module tb;
     vt = 3.3;
     #10;
     begin
-      real expect, err;
-      expect = 3.3 * 2.0e3 / 3.0e3;   // 2.2 V
-      err    = vout_r - expect;
+      real exp_v, err;
+      exp_v = 3.3 * 2.0e3 / 3.0e3;   // 2.2 V
+      err    = vout_r - exp_v;
       if (err < 0.0) err = -err;
       if (err < 1.0e-9)
-        $display("WREAL_SMOKE_PASS vout=%.6f expect=%.6f", vout_r, expect);
+        $display("WREAL_SMOKE_PASS vout=%.6f exp_v=%.6f", vout_r, exp_v);
       else
-        $fatal(1, "WREAL_SMOKE_FAIL vout=%.6f expect=%.6f err=%g", vout_r, expect, err);
+        $fatal(1, "WREAL_SMOKE_FAIL vout=%.6f exp_v=%.6f err=%g", vout_r, exp_v, err);
     end
     $finish;
   end
