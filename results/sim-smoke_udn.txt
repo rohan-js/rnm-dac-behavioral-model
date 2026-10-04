@@ -1,0 +1,71 @@
+Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
+Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
+QuestaSim-64 qrun 2024.1 Utility 2024.02 Feb  1 2024
+Start time: 14:33:42 on Oct 04,2026
+qrun -sv rnm/rnm_pkg.sv tb/smoke_udn.sv 
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+Start time: 14:33:42 on Oct 04,2026
+vlog -sv rnm/rnm_pkg.sv tb/smoke_udn.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr -csessionid=14 
+-- Compiling package rnm_pkg
+-- Compiling package smoke_udn_sv_unit
+-- Compiling module rdiv
+-- Compiling module smoke_tb
+
+Top level modules:
+	smoke_tb
+End time: 14:33:43 on Oct 04,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
+Start time: 14:33:43 on Oct 04,2026
+vopt -findtoplevels D:/UVM/PROJECTS/rnm-dac-behavioral-model/qrun.out/work+14+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt_1 -csessionid=15 
+
+Top level modules:
+	smoke_tb
+
+Analyzing design...
+-- Loading module smoke_tb
+-- Loading module rdiv
+Optimizing 3 design-units (inlining 1/2 module instances):
+-- Optimizing package smoke_udn_sv_unit(fast)
+-- Inlining module rdiv(fast)
+-- Optimizing module smoke_tb(fast)
+Optimized design name is qrun_opt_1
+End time: 14:33:44 on Oct 04,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 2024.1
+
+# vsim -lib qrun.out/work -c -do "run -all; quit -f" -statslog qrun.out/stats_log qrun_opt_1 -appendlog -l qrun.log -csession=incr -csessionid=5 
+# Start time: 14:33:46 on Oct 04,2026
+# //  Questa Sim-64
+# //  Version 2024.1 win64 Feb  1 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.smoke_udn_sv_unit(fast)
+# Loading work.smoke_tb(fast)
+# run -all
+# UDN_SMOKE_PASS vout=2.200000 exp_v=2.200000
+# UDT_SMOKE_PASS value=1.250000 valid=1
+# ** Note: $finish    : tb/smoke_udn.sv(104)
+#    Time: 20 ns  Iteration: 0  Instance: /smoke_tb
+# End time: 14:33:48 on Oct 04,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+End time: 14:33:48 on Oct 04,2026, Elapsed time: 0:00:06
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   0
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   0

@@ -1,0 +1,68 @@
+Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
+Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
+QuestaSim-64 qrun 2024.1 Utility 2024.02 Feb  1 2024
+Start time: 14:33:48 on Oct 04,2026
+qrun -sv rnm/rnm_pkg.sv tb/tb_udr_multidriver.sv 
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+Start time: 14:33:48 on Oct 04,2026
+vlog -sv rnm/rnm_pkg.sv tb/tb_udr_multidriver.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr -csessionid=6 
+-- Compiling package rnm_pkg
+-- Skipping tb/tb_udr_multidriver.sv
+
+Top level modules:
+	--none--
+End time: 14:33:49 on Oct 04,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
+Start time: 14:33:49 on Oct 04,2026
+vopt -findtoplevels D:/UVM/PROJECTS/rnm-dac-behavioral-model/qrun.out/work+6+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=7 
+
+Top level modules:
+	tb_udr_multidriver
+
+Analyzing design...
+-- Loading module tb_udr_multidriver
+Optimizing 3 design-units (inlining 0/1 module instances):
+-- Optimizing package rnm_pkg(fast)
+-- Optimizing package tb_udr_multidriver_sv_unit(fast)
+-- Optimizing module tb_udr_multidriver(fast)
+Optimized design name is qrun_opt
+End time: 14:33:50 on Oct 04,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 2024.1
+
+# vsim -lib qrun.out/work -c -do "run -all; quit -f" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log -csession=incr -csessionid=2 
+# Start time: 14:33:53 on Oct 04,2026
+# //  Questa Sim-64
+# //  Version 2024.1 win64 Feb  1 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.rnm_pkg(fast)
+# Loading work.tb_udr_multidriver_sv_unit(fast)
+# Loading work.tb_udr_multidriver(fast)
+# run -all
+# UDR_MULTI_PASS vbus=1.650000 (res_avg of 1.100000, 2.200000)
+# ** Note: $finish    : tb/tb_udr_multidriver.sv(36)
+#    Time: 10 ns  Iteration: 0  Instance: /tb_udr_multidriver
+# End time: 14:33:55 on Oct 04,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+End time: 14:33:55 on Oct 04,2026, Elapsed time: 0:00:07
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   0
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   0

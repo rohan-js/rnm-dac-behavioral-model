@@ -1,0 +1,73 @@
+Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
+Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
+QuestaSim-64 qrun 2024.1 Utility 2024.02 Feb  1 2024
+Start time: 14:33:55 on Oct 04,2026
+qrun -sv rnm/rnm_pkg.sv rnm/dac6_ideal_udn.sv tb/tb_dac6_ideal.sv 
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+Start time: 14:33:55 on Oct 04,2026
+vlog -sv rnm/rnm_pkg.sv rnm/dac6_ideal_udn.sv tb/tb_dac6_ideal.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr -csessionid=3 
+-- Compiling package rnm_pkg
+-- Skipping rnm/dac6_ideal_udn.sv
+-- Skipping tb/tb_dac6_ideal.sv
+
+Top level modules:
+	--none--
+End time: 14:33:55 on Oct 04,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
+Start time: 14:33:56 on Oct 04,2026
+vopt -findtoplevels D:/UVM/PROJECTS/rnm-dac-behavioral-model/qrun.out/work+3+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt_2 -csessionid=4 
+
+Top level modules:
+	tb_dac6_ideal
+
+Analyzing design...
+-- Loading module tb_dac6_ideal
+-- Loading module dac6_ideal_udn
+Optimizing 5 design-units (inlining 1/2 module instances):
+-- Optimizing package rnm_pkg(fast)
+-- Optimizing package tb_dac6_ideal_sv_unit(fast)
+-- Optimizing package dac6_ideal_udn_sv_unit(fast)
+-- Inlining module dac6_ideal_udn(fast)
+-- Optimizing module tb_dac6_ideal(fast)
+Optimized design name is qrun_opt_2
+End time: 14:33:57 on Oct 04,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 2024.1
+
+# vsim -lib qrun.out/work -c -do "run -all; quit -f" -statslog qrun.out/stats_log qrun_opt_2 -appendlog -l qrun.log -csession=incr -csessionid=8 
+# Start time: 14:33:59 on Oct 04,2026
+# //  Questa Sim-64
+# //  Version 2024.1 win64 Feb  1 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.rnm_pkg(fast)
+# Loading work.dac6_ideal_udn_sv_unit(fast)
+# Loading work.tb_dac6_ideal_sv_unit(fast)
+# Loading work.tb_dac6_ideal(fast)
+# run -all
+# DAC6_IDEAL_PASS codes=64 max_err=0.000e+00 half_lsb=2.578e-02 coverage=100.0%
+# ** Note: $finish    : tb/tb_dac6_ideal.sv(97)
+#    Time: 646 ns  Iteration: 0  Instance: /tb_dac6_ideal
+# End time: 14:34:00 on Oct 04,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+End time: 14:34:00 on Oct 04,2026, Elapsed time: 0:00:05
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   0
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   0

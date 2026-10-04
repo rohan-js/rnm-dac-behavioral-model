@@ -1,0 +1,36 @@
+{
+  "project": "RNM DAC behavioral model \u2014 SystemVerilog real-number model verified against a SKY130 tt device-level SPICE bench",
+  "device_bench": {
+    "vref": 3.3,
+    "codes": 64,
+    "pdk": "SKY130 tt (open models)",
+    "mismatch": "+/-0.5% body sheet, rng(42), see spice/dac6_mismatch.csv"
+  },
+  "calibration": {
+    "model_form": "Vout = OFF + GAIN*x + BOW*x^2, x = Vref*code/64",
+    "off_v": 0.0001292905564462109,
+    "gain": 1.0000757965836855,
+    "bow_v_per_v2": -1.6532712371321126e-05,
+    "tau_s": 3.225598226973768e-09
+  },
+  "accuracy": {
+    "max_abs_residual_v": 0.0005194281712299631,
+    "max_abs_residual_in_half_lsb": 0.020147516944677358,
+    "gate_pass": true,
+    "inl_max_lsb": 0.010395151515153299,
+    "dnl_max_lsb": 0.00304096969696967
+  },
+  "settling": {
+    "vfinal_v": 3.2483817090000002,
+    "t_settle_half_lsb_s": 3.05639843e-08,
+    "tau_s": 3.225598226973768e-09,
+    "threshold_v": 0.02578125
+  },
+  "simulations": {
+    "smoke_udn": null,
+    "udr_multidriver": null,
+    "dac6_ideal": "DAC6_IDEAL_PASS codes=64 max_err=0.000e+00 half_lsb=2.578e-02 coverage=100.0%",
+    "dac6_vs_spice": "DAC6_VS_SPICE_PASS codes=64 max_res=5.1943e-04 half_lsb=2.5781e-02 coverage=100.0%",
+    "dac6_integration": "DAC6_INTG_PASS codes=84 max_res=5.1943e-04 half_lsb=2.5781e-02 coverage=100.0%"
+  }
+}

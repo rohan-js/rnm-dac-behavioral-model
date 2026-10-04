@@ -1,0 +1,75 @@
+Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
+Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
+QuestaSim-64 qrun 2024.1 Utility 2024.02 Feb  1 2024
+Start time: 14:34:01 on Oct 04,2026
+qrun -sv rnm/rnm_pkg.sv rnm/dac6_cal_udn.sv tb/tb_dac6_vs_spice.sv "+incdir+results" 
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+Start time: 14:34:01 on Oct 04,2026
+vlog -sv "+incdir+results" rnm/rnm_pkg.sv rnm/dac6_cal_udn.sv tb/tb_dac6_vs_spice.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr -csessionid=9 
+-- Compiling package rnm_pkg
+-- Compiling package dac6_cal_udn_sv_unit
+-- Importing package rnm_pkg
+-- Compiling module dac6_cal_udn
+-- Skipping tb/tb_dac6_vs_spice.sv
+
+Top level modules:
+	dac6_cal_udn
+End time: 14:34:01 on Oct 04,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
+Start time: 14:34:01 on Oct 04,2026
+vopt -findtoplevels D:/UVM/PROJECTS/rnm-dac-behavioral-model/qrun.out/work+9+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt_1 -csessionid=11 
+
+Top level modules:
+	tb_dac6_vs_spice
+
+Analyzing design...
+-- Loading module tb_dac6_vs_spice
+-- Loading module dac6_cal_udn
+Optimizing 5 design-units (inlining 1/2 module instances):
+-- Optimizing package rnm_pkg(fast)
+-- Optimizing package tb_dac6_vs_spice_sv_unit(fast)
+-- Optimizing package dac6_cal_udn_sv_unit(fast)
+-- Inlining module dac6_cal_udn(fast)
+-- Optimizing module tb_dac6_vs_spice(fast)
+Optimized design name is qrun_opt_1
+End time: 14:34:02 on Oct 04,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+Reading pref.tcl
+
+# 2024.1
+
+# vsim -lib qrun.out/work -c -do "run -all; quit -f" -statslog qrun.out/stats_log qrun_opt_1 -appendlog -l qrun.log -csession=incr -csessionid=5 
+# Start time: 14:34:04 on Oct 04,2026
+# //  Questa Sim-64
+# //  Version 2024.1 win64 Feb  1 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.rnm_pkg(fast)
+# Loading work.dac6_cal_udn_sv_unit(fast)
+# Loading work.tb_dac6_vs_spice_sv_unit(fast)
+# Loading work.tb_dac6_vs_spice(fast)
+# run -all
+# DAC6_VS_SPICE_PASS codes=64 max_res=5.1943e-04 half_lsb=2.5781e-02 coverage=100.0%
+# ** Note: $finish    : tb/tb_dac6_vs_spice.sv(116)
+#    Time: 8965 ns  Iteration: 1  Instance: /tb_dac6_vs_spice
+# End time: 14:34:06 on Oct 04,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+End time: 14:34:06 on Oct 04,2026, Elapsed time: 0:00:05
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   0
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   0
