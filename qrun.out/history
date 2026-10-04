@@ -19,3 +19,9 @@
 - Entry: 7
   Time: Fri Oct  2 14:43:07 2026
   Command: C:\questasim64_2024.1\win64\qrun.exe -sv rnm/rnm_pkg.sv rnm/dac6_ideal_udn.sv tb/tb_dac6_ideal.sv 
+- Entry: 8
+  Time: Sun Oct  4 14:28:18 2026
+  Command: C:\questasim64_2024.1\win64\qrun.exe -sv rnm/rnm_pkg.sv rnm/dac6_cal_udn.sv tb/tb_dac6_vs_spice.sv +incdir+results 
+- Entry: 9
+  Time: Sun Oct  4 14:28:37 2026
+  Command: C:\questasim64_2024.1\win64\qrun.exe -sv rnm/rnm_pkg.sv rnm/dac6_cal_udn.sv tb/tb_dac6_vs_spice.sv +incdir+results 

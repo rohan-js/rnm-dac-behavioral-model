@@ -1,0 +1,21 @@
+{
+  "model": "Vout = OFF + GAIN*x + BOW*x^2, x = Vref*code/64",
+  "off_v": 0.0001292905564462109,
+  "gain": 1.0000757965836855,
+  "bow_v_per_v2": -1.6532712371321126e-05,
+  "max_abs_residual_v": 0.0005194281712299631,
+  "max_abs_residual_in_half_lsb": 0.020147516944677358,
+  "pass_half_lsb": true,
+  "settling": {
+    "vfinal_v": 3.2483817090000002,
+    "t_settle_half_lsb_s": 3.05639843e-08,
+    "tau_s": 3.225598226973768e-09,
+    "threshold_v": 0.02578125
+  },
+  "bench": {
+    "vref": 3.3,
+    "codes": 64,
+    "pdk": "SKY130 tt (open models)",
+    "mismatch": "+/-0.5% body sheet, rng(42), see spice/dac6_mismatch.csv"
+  }
+}
