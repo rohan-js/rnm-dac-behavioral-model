@@ -1,13 +1,13 @@
-* dev_smoke.sp — SKY130 device smoke: one poly resistor + one TG switch
+* dev_smoke.sp - SKY130 device smoke: one poly resistor + one TG switch
 * Verifies the include chain, binning, and instance syntax before the DAC bench.
 *
 * Global process constants the cells-repo files expect (values documented):
-*   var / slope_spectre / con_slope_spectre — MC machinery, zeroed for the
+*   var / slope_spectre / con_slope_spectre - MC machinery, zeroed for the
 *     deterministic bench (per-instance mismatch applied via rsheet override)
-*   tc1/tc2rpolybody — poly resistor temperature coefficients, zeroed for the
+*   tc1/tc2rpolybody - poly resistor temperature coefficients, zeroed for the
 *     isothermal 27 C bench
 * MOS instances use EXPLICIT bin cards (nfet .62 / pfet .71 for W=1.1u L=0.16u;
-* ranges parsed from the pm3 files) — ngspice does not auto-bin from base name.
+* ranges parsed from the pm3 files) - ngspice does not auto-bin from base name.
 .param sky130_fd_pr__res_high_po__var = 0
 .param sky130_fd_pr__res_high_po__slope_spectre = 0
 .param sky130_fd_pr__res_high_po__con_slope_spectre = 0
@@ -23,7 +23,7 @@
 .param tc2rpolybody = 0
 
 * Include chain note: the corner files' internal `.include` resolves relative
-* to CWD, not to the including file — so the tt.pm3 model-card files are
+* to CWD, not to the including file - so the tt.pm3 model-card files are
 * included directly here (tt.pm3 == nominal corner; corner multiplier params
 * are only needed for MC corners, which this deterministic bench does not use).
 .include "models/sky130/sky130_fd_pr__nfet_01v8__tt.corner.spice"

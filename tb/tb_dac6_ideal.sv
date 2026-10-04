@@ -1,4 +1,4 @@
-// tb_dac6_ideal.sv — Phase 1 gate testbench for the ideal 6-bit R-string DAC.
+// tb_dac6_ideal.sv - Phase 1 gate testbench for the ideal 6-bit R-string DAC.
 //
 // Checks (all evidence lands in the simulation log):
 //   1. Full-code sweep 0..63, per-code |Vout - expected| <= half LSB (Vref/128)
@@ -39,7 +39,7 @@ module tb_dac6_ideal;
   real err;
   assign err = (vout_r > exp_v) ? (vout_r - exp_v) : (exp_v - vout_r);
 
-  // ---- SVA (real-valued, sampled at posedge; code changes at negedge) ----
+  // - SVA (real-valued, sampled at posedge; code changes at negedge) -
   real prev_v;
   initial prev_v = -1.0;
   always @(posedge clk) prev_v <= vout_r;
@@ -53,7 +53,7 @@ module tb_dac6_ideal;
   A_HALF_LSB: assert property (@(posedge clk) err <= half_lsb)
     else $error("ACCURACY violated: err=%g > half_lsb=%g", err, half_lsb);
 
-  // ---- functional coverage on code corners ----
+  // - functional coverage on code corners -
   covergroup cg_code @(posedge clk);
     cp_code: coverpoint code {
       bins zero    = {0};
@@ -68,7 +68,7 @@ module tb_dac6_ideal;
   endgroup
   cg_code cg = new();
 
-  // ---- stimulus + per-code procedural accuracy check ----
+  // - stimulus + per-code procedural accuracy check -
   initial begin
     real max_err;
     int  fails;

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Generate the two evidence plots into results/.
 
-plot_dc_accuracy.png — SPICE sweep vs calibrated model (top) and the
+plot_dc_accuracy.png - SPICE sweep vs calibrated model (top) and the
                        model-vs-SPICE residual against the half-LSB gate (bottom)
-plot_settling.png    — transient output for the code 0 -> 63 step (1 pF load)
+plot_settling.png    - transient output for the code 0 -> 63 step (1 pF load)
 """
 from pathlib import Path
 import matplotlib
@@ -36,7 +36,7 @@ def main():
                                    gridspec_kw={"height_ratios": [3, 1.4]})
     ax1.plot(codes, vspice, "o", ms=4, label="SKY130 tt device bench (ngspice)")
     ax1.plot(codes, vmodel, "-", lw=1.2, label="calibrated SV model")
-    ax1.plot(codes, ideal, "--", lw=0.8, color="gray", label="ideal line")
+    ax1.plot(codes, ideal, "-", lw=0.8, color="gray", label="ideal line")
     ax1.set_ylabel("Vout (V)")
     ax1.legend(loc="upper left", fontsize=8)
     ax1.set_title("6-bit R-string DAC: real-number model vs device-level SPICE")
@@ -58,7 +58,7 @@ def main():
     vf = fit["settling"]["vfinal_v"]
     fig2, ax = plt.subplots(figsize=(8, 3.6))
     ax.plot([t for t, _ in tran], [v for _, v in tran], lw=1.0)
-    ax.axhline(vf, color="gray", lw=0.8, ls="--", label=f"final = {vf:.4f} V")
+    ax.axhline(vf, color="gray", lw=0.8, ls="-", label=f"final = {vf:.4f} V")
     ax.axhspan(vf - HALF_LSB, vf + HALF_LSB, color="green", alpha=0.15,
                label="half-LSB band")
     ax.axvline(10.0, color="orange", lw=0.8, ls=":", label="code step 0 -> 63")

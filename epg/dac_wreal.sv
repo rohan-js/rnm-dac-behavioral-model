@@ -1,6 +1,6 @@
-// dac_wreal.sv — Verilog-AMS wreal twin of the ideal 6-bit R-string DAC.
+// dac_wreal.sv - Verilog-AMS wreal twin of the ideal 6-bit R-string DAC.
 //
-// *** NOT EXECUTED — see docs/tool-support.md for the empirical basis ***
+// *** NOT EXECUTED - see docs/tool-support.md for the empirical basis ***
 // No simulator available to this project executes Verilog-AMS wreal:
 //   - QuestaSim 2024.1 base: wreal requires the Questa ADMS product
 //   - EDA Playground Xcelium 25.03: -ams requires a Spectre install (absent)

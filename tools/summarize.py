@@ -31,7 +31,7 @@ def main():
                                       "dac6_ideal", "dac6_vs_spice",
                                       "dac6_integration")}
     summary = {
-        "project": "RNM DAC behavioral model — SystemVerilog real-number model "
+        "project": "RNM DAC behavioral model - SystemVerilog real-number model "
                    "verified against a SKY130 tt device-level SPICE bench",
         "device_bench": fit["bench"],
         "calibration": {
@@ -59,7 +59,7 @@ def main():
         "## Gate: calibrated model vs SKY130 device bench",
         "",
         "| Metric | Value |",
-        "|---|---|",
+        "|-|-|",
         f"| Max abs residual (model vs SPICE, 64 codes) | {fit['max_abs_residual_v']:.4g} V "
         f"= {fit['max_abs_residual_in_half_lsb']:.4f} x half-LSB |",
         f"| Gate (residual <= half-LSB) | **{'PASS' if fit['pass_half_lsb'] else 'FAIL'}** |",

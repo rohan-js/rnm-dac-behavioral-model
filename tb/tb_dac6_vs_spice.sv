@@ -1,4 +1,4 @@
-// tb_dac6_vs_spice.sv — Phase 2 gate: calibrated behavioral model vs the
+// tb_dac6_vs_spice.sv - Phase 2 gate: calibrated behavioral model vs the
 // SKY130 tt device bench.
 //
 // The calibrated model (rnm/dac6_cal_udn.sv, parameters fitted to the

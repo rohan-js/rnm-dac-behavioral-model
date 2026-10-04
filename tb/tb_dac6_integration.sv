@@ -1,4 +1,4 @@
-// tb_dac6_integration.sv — Phase 3 gate: digital bus TB driving the analog
+// tb_dac6_integration.sv - Phase 3 gate: digital bus TB driving the analog
 // model through the RTL wrapper.
 //
 // Stimulus: all 64 codes in order, then 20 constrained-random codes.
@@ -6,8 +6,8 @@
 // fall, then check the settled output against the committed SPICE table.
 //
 // Assertions:
-//   A_MOVES_ONLY_WHEN_BUSY — the analog output may only change while busy
-//   A_BOUNDS               — output stays inside [0, Vref]
+//   A_MOVES_ONLY_WHEN_BUSY - the analog output may only change while busy
+//   A_BOUNDS               - output stays inside [0, Vref]
 //
 // Run (from repo root):
 //   qrun -sv rnm/rnm_pkg.sv rnm/dac6_cal_udn.sv rnm/dac6_sys_udn.sv tb/tb_dac6_integration.sv +incdir+results
@@ -43,7 +43,7 @@ module tb_dac6_integration;
   assign half_lsb = vref / 128.0;
 
   bit started = 1'b0;  // power-on settling (before the first upd) is not a
-                       // protocol violation — the model settles from t=0
+                       // protocol violation - the model settles from t=0
   A_MOVES_ONLY_WHEN_BUSY: assert property (@(posedge clk) disable iff (!rst_n)
       $changed(vout_r) |-> (busy || !started))
     else $error("OUTPUT moved while not busy: vout=%f", vout_r);

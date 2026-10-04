@@ -1,10 +1,10 @@
-// wreal_smoke.sv — Phase 0 ground-truth smoke test for Verilog-AMS wreal RNM.
+// wreal_smoke.sv - Phase 0 ground-truth smoke test for Verilog-AMS wreal RNM.
 // Target: EDA Playground, simulator = Cadence Xcelium (wreal needs an AMS-capable
-//         simulator; base Questa does not support it — see docs/tool-support.md).
+//         simulator; base Questa does not support it - see docs/tool-support.md).
 // Paste this whole file into the "testbench.sv" panel on edaplayground.com.
 `timescale 1ns/1ps
 
-// DUT — resistor divider as a wreal behavioral model
+// DUT - resistor divider as a wreal behavioral model
 module rdiv_wreal (
   input  wreal vtop,
   input  wreal gnd,

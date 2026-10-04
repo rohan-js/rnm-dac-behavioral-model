@@ -1,4 +1,4 @@
-* parasitic_res_po_stub.sp — documented stub for sky130_fd_pr__model__parasitic__res_po
+* parasitic_res_po_stub.sp - documented stub for sky130_fd_pr__model__parasitic__res_po
 *
 * The official cell (libs.tech/ngspice/parasitics/ in a full sky130A install)
 * is the RC-extraction shunt network of the poly resistor body to substrate

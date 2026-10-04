@@ -1,4 +1,4 @@
-# run_all.ps1 — one-command regeneration of ALL evidence.
+# run_all.ps1 - one-command regeneration of ALL evidence.
 #
 # Regenerates benches -> runs the SPICE characterization (DC sweep + settling)
 # -> calibrates the behavioral model -> runs the three Questa testbenches ->

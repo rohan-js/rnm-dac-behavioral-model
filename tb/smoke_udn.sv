@@ -1,21 +1,21 @@
-// smoke_udn.sv — Phase 0 ground-truth smoke test for SystemVerilog Real Number Modeling
+// smoke_udn.sv - Phase 0 ground-truth smoke test for SystemVerilog Real Number Modeling
 // Exercises: UDN (nettype real), UDR (user-defined resolution function),
 //            UDT (user-defined struct nettype), real-valued checking, SVA bound assertion.
-// Target   : QuestaSim 2024.1 base (digital kernel) — C:\questasim64_2024.1
+// Target   : QuestaSim 2024.1 base (digital kernel) - C:\questasim64_2024.1
 // Run      : qrun -sv tb/smoke_udn.sv
 `timescale 1ns/1ps
 
-// ---------------------------------------------------------------------------
-// UDR — user-defined resolution function (last-driver-wins)
-// ---------------------------------------------------------------------------
+// -
+// UDR - user-defined resolution function (last-driver-wins)
+// -
 function automatic real res_last (input real drivers[]);
   if (drivers.size() == 0) return 0.0;
   return drivers[drivers.size()-1];
 endfunction
 
-// ---------------------------------------------------------------------------
-// UDT — user-defined type carried on a net (value + valid flag)
-// ---------------------------------------------------------------------------
+// -
+// UDT - user-defined type carried on a net (value + valid flag)
+// -
 typedef struct {
   real  value;
   logic valid;
@@ -32,15 +32,15 @@ function automatic analog_t res_analog (input analog_t drivers[]);
   return r;
 endfunction
 
-// ---------------------------------------------------------------------------
+// -
 // UDN declarations
-// ---------------------------------------------------------------------------
+// -
 nettype real     RealNet   with res_last;
 nettype analog_t AnalogNet with res_analog;
 
-// ---------------------------------------------------------------------------
-// DUT — resistor divider as a real-number behavioral model
-// ---------------------------------------------------------------------------
+// -
+// DUT - resistor divider as a real-number behavioral model
+// -
 module rdiv (
   input  real    vtop,
   input  real    r1,
@@ -50,9 +50,9 @@ module rdiv (
   assign vout = vtop * r2 / (r1 + r2);
 endmodule
 
-// ---------------------------------------------------------------------------
+// -
 // Testbench
-// ---------------------------------------------------------------------------
+// -
 module smoke_tb;
   real    vtop = 0.0, r1 = 1.0e3, r2 = 2.0e3;
   RealNet vout;

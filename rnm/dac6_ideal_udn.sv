@@ -1,4 +1,4 @@
-// dac6_ideal_udn.sv — ideal 6-bit resistor-string DAC as a real-number
+// dac6_ideal_udn.sv - ideal 6-bit resistor-string DAC as a real-number
 // behavioral model (UDN dialect).
 //
 // Transfer function: Vout = Vref * code / 64  (monotonic by construction;

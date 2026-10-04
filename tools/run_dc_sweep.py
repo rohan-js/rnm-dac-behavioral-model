@@ -35,7 +35,7 @@ def main():
             cwd=SPICE, capture_output=True, text=True, timeout=300,
         )
         # the bench's control block redirects `print col v(out)` into
-        # raw/dac6_last.txt — parse that, not stdout
+        # raw/dac6_last.txt - parse that, not stdout
         last = (SPICE / "raw" / "dac6_last.txt").read_text()
         m = re.search(r"^\d+\t([-+0-9.eE]+)", last, flags=re.M)
         if not m:

@@ -1,4 +1,4 @@
-* rc_smoke.sp — Phase 0 ngspice smoke test: 1st-order RC step, DC sweep
+* rc_smoke.sp - Phase 0 ngspice smoke test: 1st-order RC step, DC sweep
 .title RC smoke test
 
 V1 in 0 DC 1.8

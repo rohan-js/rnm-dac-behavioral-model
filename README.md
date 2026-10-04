@@ -1,11 +1,11 @@
-# RNM DAC Behavioral Model — SystemVerilog real-number modeling, verified against SPICE
+# RNM DAC Behavioral Model - SystemVerilog real-number modeling, verified against SPICE
 
 A 6-bit resistor-string DAC modeled as a **real-number behavioral model** in
-SystemVerilog — implemented in both RNM dialects:
+SystemVerilog - implemented in both RNM dialects:
 
-- **`nettype real` user-defined nets (UDN/UDT/UDR)** — IEEE 1800 portable RNM,
+- **`nettype real` user-defined nets (UDN/UDT/UDR)** - IEEE 1800 portable RNM,
   runs on any modern digital simulator (developed locally on QuestaSim 2024.1)
-- **Verilog-AMS `wreal`** — the classic Verilog-AMS RNM nettype (verified on
+- **Verilog-AMS `wreal`** - the classic Verilog-AMS RNM nettype (verified on
   Cadence Xcelium via EDA Playground)
 
 The behavioral model is **calibrated against a device-level SPICE
@@ -14,7 +14,7 @@ reference, the model is fit to it, and SystemVerilog assertions bound the
 model-vs-SPICE error. Model accuracy, INL/DNL, and settling are reported in
 `results/` and `docs/model-accuracy-report.md`.
 
-**Status: Phases 0-3 complete — all gates PASSED.** Full numbers in
+**Status: Phases 0-3 complete - all gates PASSED.** Full numbers in
 `results/accuracy-summary.md`; methodology and limitations in
 `docs/model-accuracy-report.md`.
 
@@ -38,22 +38,25 @@ One command regenerates all evidence (benches -> SPICE characterization ->
 calibration -> three testbenches -> summary):
 
 ```powershell
-powershell -File toolsun_all.ps1
+powershell -File tools
+un_all.ps1
 ```
 
 Individual steps:
 
 ```powershell
 python tools\gen_dac_netlist.py          # benches + committed mismatch draws
-python toolsun_dc_sweep.py             # 64-code device characterization (ngspice)
+python tools
+un_dc_sweep.py             # 64-code device characterization (ngspice)
 python tools\extract_and_calibrate.py    # fit + INL/DNL + model_params.svh
-qrun -sv rnmnm_pkg.sv rnm\dac6_cal_udn.sv tb	b_dac6_vs_spice.sv +incdir+results
+qrun -sv rnm
+nm_pkg.sv rnm\dac6_cal_udn.sv tb	b_dac6_vs_spice.sv +incdir+results
 ```
 
 ## Repository layout
 
 | Path | Contents |
-|---|---|
+|-|-|
 | `rnm/` | Real-number behavioral models (UDN primary, wreal twin) |
 | `tb/` | Testbenches, checkers, SVA assertion packages |
 | `spice/` | ngspice netlists (DAC device-level reference, smoke tests) |
@@ -64,4 +67,4 @@ qrun -sv rnmnm_pkg.sv rnm\dac6_cal_udn.sv tb	b_dac6_vs_spice.sv +incdir+results
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).

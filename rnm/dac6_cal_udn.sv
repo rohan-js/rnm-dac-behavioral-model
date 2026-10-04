@@ -1,11 +1,11 @@
-// dac6_cal_udn.sv — SPICE-calibrated non-ideal 6-bit resistor-string DAC
+// dac6_cal_udn.sv - SPICE-calibrated non-ideal 6-bit resistor-string DAC
 // as a real-number behavioral model (UDN dialect).
 //
 // Transfer function (calibrated to the SKY130 tt device bench by
 // tools/extract_and_calibrate.py; parameters in results/model_params.svh):
 //   Vout = OFF + GAIN*x + BOW*x^2,  x = Vref*code/64
 // Output dynamics: first-order exponential with time constant TAU (fitted
-// from the transient bench), updated on a free-running 1 ns tick — the
+// from the transient bench), updated on a free-running 1 ns tick - the
 // standard discrete-dynamics emulation for real-number models on a purely
 // digital kernel.
 `timescale 1ns/1ps

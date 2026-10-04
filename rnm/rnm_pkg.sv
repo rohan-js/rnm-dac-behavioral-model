@@ -1,19 +1,19 @@
-// rnm_pkg.sv — shared Real Number Modeling declarations
+// rnm_pkg.sv - shared Real Number Modeling declarations
 // Contains: UDR (user-defined resolution function), UDN (nettype real),
 //           project-wide tolerances.
 `timescale 1ns/1ps
 
 package rnm_pkg;
 
-  // ------------------------------------------------------------------
-  // UDR — user-defined resolution functions.
-  // res_last: last-element-wins — single-driver nets only! Driver-array
+  // -
+  // UDR - user-defined resolution functions.
+  // res_last: last-element-wins - single-driver nets only! Driver-array
   //           ordering is simulator-specific (verified: Questa does not
   //           preserve source order), so res_last is NOT portable for
   //           multi-driver nets.
-  // res_avg : order-independent mean over all drivers — the portable
+  // res_avg : order-independent mean over all drivers - the portable
   //           pattern for genuinely multi-driver nets.
-  // ------------------------------------------------------------------
+  // -
   function automatic real res_last (input real drivers[]);
     if (drivers.size() == 0) return 0.0;
     return drivers[drivers.size()-1];
@@ -27,10 +27,10 @@ package rnm_pkg;
     return sum / drivers.size();
   endfunction
 
-  // ------------------------------------------------------------------
-  // UDN — user-defined nettypes carrying real values on the digital
+  // -
+  // UDN - user-defined nettypes carrying real values on the digital
   // kernel (no analog solver required).
-  // ------------------------------------------------------------------
+  // -
   nettype real RealNet    with res_last;   // single-driver models (DAC)
   nettype real RealNetAvg with res_avg;    // multi-driver demonstration
 

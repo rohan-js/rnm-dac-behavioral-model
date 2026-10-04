@@ -1,8 +1,8 @@
-// tb_udr_multidriver.sv — UDR rep: two drivers on one UDN, order-independent
+// tb_udr_multidriver.sv - UDR rep: two drivers on one UDN, order-independent
 // resolution.
 //
 // Completes the UDR evidence: rnm_pkg's res_avg resolution function must
-// resolve the multi-driver case to the MEAN of the driver values — a
+// resolve the multi-driver case to the MEAN of the driver values - a
 // deterministic, order-independent result (driver-array ordering is
 // simulator-specific, so avg/max are the portable resolution patterns).
 //

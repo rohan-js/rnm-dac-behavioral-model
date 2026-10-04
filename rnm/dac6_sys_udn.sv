@@ -1,11 +1,11 @@
-// dac6_sys_udn.sv — RTL integration wrapper for the calibrated DAC model.
+// dac6_sys_udn.sv - RTL integration wrapper for the calibrated DAC model.
 //
 // Digital side: 6-bit parallel code bus + 1-cycle `upd` strobe, code register,
 // and a `busy` flag held high for the model's settling window (10 time
 // constants, computed from TAU at elaboration). Analog side: the calibrated
 // real-number behavioral model (rnm/dac6_cal_udn.sv) on a UDN output net.
 //
-// This is the JD's "integrating the models with RTL" — the RNM model hangs
+// This is the JD's "integrating the models with RTL" - the RNM model hangs
 // off real register-transfer logic with a handshake, so a digital TB can
 // treat the analog block as just another bus-mapped peripheral.
 `timescale 1ns/1ps

@@ -1,4 +1,4 @@
-# EDA Playground wreal smoke test — how to run
+# EDA Playground wreal smoke test - how to run
 
 `wreal` needs an AMS-capable simulator. The local Questa 2024.1 is base-only
 (see `docs/tool-support.md`), so the `wreal` dialect is verified on EDA
